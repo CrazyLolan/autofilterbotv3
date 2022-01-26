@@ -1,5 +1,5 @@
 # (c) PR0FESS0R-99
-from Config import AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, API_KEY, AUTH_GROUPS, TUTORIAL
+from Config import AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, API_KEY, AUTH_GROUPS, CREATOR
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram import Client, filters
 import re
@@ -29,11 +29,11 @@ async def filter(client, message):
         except UserNotParticipant:
             await client.send_message(
                 chat_id=message.from_user.id,
-                text="**Please Join My Updates Channel to use this Bot!**",
+                text="**Please Join My Movie Group to use this Bot!**",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton("📢 Join Updates Channel 📢", url=invite_link.invite_link)
+                            InlineKeyboardButton("🎥MOVIE GROUP", url=https://t.me/movies_at_here)
                         ]
                     ]
                 ),
@@ -277,7 +277,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         elif query.data == "help":
             buttons = [
                 [
-                    InlineKeyboardButton('Making Video', url=f'{TUTORIAL}')
+                    InlineKeyboardButton('🔴CREATOR', url=f'{CREATOR}')
                 ]
                 ]
             await query.message.edit(text=f"{HELP}", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
@@ -285,7 +285,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         elif query.data == "about":
             buttons = [
                 [
-                    InlineKeyboardButton('Making Video', url=f'{TUTORIAL}')
+                    InlineKeyboardButton('🔴CREATOR', url=f'{CREATOR}')
                 ]
                 ]
             await query.message.edit(text=f"{ABOUT}", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
@@ -308,7 +308,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     f_caption = f"{files.file_name}"
                 buttons = [
                     [
-                        InlineKeyboardButton('🖥️ How To Own 🖥️', url=f'{TUTORIAL}')
+                        InlineKeyboardButton('🔴CREATOR', url=f'{CREATOR}')
                     ]
                     ]
                 
@@ -339,7 +339,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     f_caption = f"{title}"
                 buttons = [
                     [
-                        InlineKeyboardButton('🖥️ How To Own 🖥️', url=f'{TUTORIAL}')
+                        InlineKeyboardButton('🔴CREATOR', url=f'{CREATOR}')
                     ]
                     ]
                 
